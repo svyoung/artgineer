@@ -84,7 +84,7 @@ html, body {
 
 .text-sam, .text-young {
 	text-transform: uppercase;
-	font-size: 3vw;
+	font-size: 5vmax;
 	font-family: 'Abel', sans-serif;
 }
 .text-young {
