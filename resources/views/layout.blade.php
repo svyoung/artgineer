@@ -32,10 +32,10 @@
     <div id="header-div">
         <div id="header-text">
             <span class="text-sam">Sam</span><span class="text-young">Young</span>
-            <p>
-                <a href="https://www.linkedin.com/in/samisoam" target="_blank"><i class="fa fa-linkedin fa-fw"></i></a>
+            <p class="sm-icons">
+                <a href="https://www.linkedin.com/in/samisoam" target="_blank"><i class="fa fa-linkedin-square fa-fw"></i></a>
                 <a href="https://github.com/svyoung" target="_blank"><i class="fa fa-github fa-fw"></i></a>
-                <a href="mailto:truong.vee@gmail.com" target="_blank"><i class="fa fa-envelope"></i></a>
+                <a href="mailto:truong.vee@gmail.com" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
             </p>
             <p>
                 <a id="accesscontent"><i class="fa fa-angle-down arrowlarge"></i></a>

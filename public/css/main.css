@@ -91,6 +91,10 @@ html, body {
 	font-weight: bold;
 }
 
+.sm-icons {
+	font-size: 1.8vmax;
+}
+
 .arrowlarge {
 	font-size: 10vw !important;
 	color: #abb8c1;
