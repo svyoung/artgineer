@@ -26,19 +26,21 @@ class PostsController extends Controller
     	$data = $request->all();
 
     	try {
-    		DB::table('posts')
-    			->insert([
-    				'title' => $data['title'],
-    				'content' => $data['content'],
-    				'created_at' => date('Y-m-d H:i:s'),
-    				'updated_at' => date('Y-m-d H:i:s'),
-    				'status' => 'active'
-    			]);
+            $id = DB::table('posts')->insertGetId(
+                    array(
+                        'title' => $data['title'],
+                        'content' => $data['content'],
+                        'created_at' => date('Y-m-d H:i:s'),
+                        'updated_at' => date('Y-m-d H:i:s'),
+                        'status' => 'active'
+                        )
+            );
     	} catch(\Exception $e) {
     		return response()->json(false);
     	}
 
     	$return = [
+            'id' => $id,
     		'title' => $data['title'],
 			'content' => $data['content'],
 			'created_at' => date('F, d Y')
