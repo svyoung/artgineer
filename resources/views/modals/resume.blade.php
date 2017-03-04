@@ -84,25 +84,34 @@
         <div class="employer-box pad-15">
           <table class="table">
             <tr class="boldtext">
-              <td>PHP Developer</td>
-              <td class="center">INT, Inc – Home-based, California</td>
-              <td class="right">March 2016 – November 2016</td>
+              <td>
+                  <div class="row">
+                    <div class="col-md-4"><i class="fa fa-id-card"></i> PHP Developer</div>
+                    <div class="col-md-4 center"><i class="fa fa-building"></i> INT, Inc – Home-based, California</div>
+                    <div class="col-md-4 right"><i class="fa fa-calendar"></i> Mar 2016 – Nov 2016</div>
+                  </div>
+              </td>
             </tr>
             <tr>
-              <td rowspand="3" colspan="3">
+              <td>
               <ul>
                 <li>Wrote backend logic for CRM platform in Yii framework for fuel and oil dealers customers to utilize marketing messages and marketing emails</li>
                 <li>Migrated and improved legacy code to modern technology such as Yii, SASS CSS, object oriented programming, and jQuery</li>
               </ul>
               </td>
             </tr>
+
             <tr class="boldtext">
-              <td>Software Engineer</td>
-              <td class="center">Next Generation Insurance Group – Boston, MA</td>
-              <td class="right">January 2015 – February 2016</td>
+              <td>
+                  <div class="row">
+                    <div class="col-md-4"><i class="fa fa-id-card"></i> Software Engineer</div>
+                    <div class="col-md-4 center"><i class="fa fa-building"></i> Next Generation Insurance Group – Boston, MA</div>
+                    <div class="col-md-4 right"><i class="fa fa-calendar"></i> Jan 2015 – Feb 2016</div>
+                  </div>
+              </td>
             </tr>
             <tr>
-              <td rowspand="3" colspan="3">
+              <td>
               <ul>
                 <li>Created backend login for user account management, providing customers to add, edit, and view their information, purchasing, and registration functionality for student’s renters and tuition insurance billing implementing MongoDB and in house API</li>
                 <li>Build and improve in house content management system of product storage/organization, customer purchasing and registration process, and maintain user friendly UI for sales representatives usage</li>
@@ -110,26 +119,38 @@
               </ul>
               </td>
             </tr>
+
+
             <tr class="boldtext">
-              <td>Programmer Analyst</td>
-              <td class="center">Meiko America, Inc – Torrance, CA</td>
-              <td class="right">March 2014 — January 2015</td>
+              <td>
+                  <div class="row">
+                    <div class="col-md-4"><i class="fa fa-id-card"></i> Programmer Analyst</div>
+                    <div class="col-md-4 center"><i class="fa fa-building"></i> Meiko America, Inc – Torrance, CA</div>
+                    <div class="col-md-4 right"><i class="fa fa-calendar"></i> Mar 2014 — Jan 2015</div>
+                  </div>
+              </td>
             </tr>
             <tr>
-              <td rowspand="3" colspan="3">
+              <td>
               <ul>
                 <li>Converted two in house warehouse management system (Inventory Management System and Container Freight System) from flat PHP to the Symfony2 framework </li>
                 <li>Developed and improved user experience for a portal used internally and created new functions and features upon user requests in system, debugged and fixed program errors</li>
               </ul>
               </td>
             </tr>
+
+
             <tr class="boldtext">
-              <td>Front End Developer</td>
-              <td class="center">Atypical Brands, LLC – Van Nuys, CA</td>
-              <td class="right">November 2013 — March 2014</td>
+              <td>
+                  <div class="row">
+                    <div class="col-md-4"><i class="fa fa-id-card"></i> Front End Developer</div>
+                    <div class="col-md-4 center"><i class="fa fa-building"></i> Atypical Brands, LLC – Van Nuys, CA</div>
+                    <div class="col-md-4 right"><i class="fa fa-calendar"></i> Nov 2013 — Mar 2014</div>
+                  </div>
+              </td>
             </tr>
             <tr>
-              <td rowspand="3" colspan="3">
+              <td>
               <ul>
                 <li>Customized Magento shopping cart framework to match existing business’s processes, including the development of custom modules in product inventory, purchasing, campaign and shopping cart rules</li>
                 <li>Created email templates for customer transactions</li>
@@ -137,13 +158,20 @@
               </ul>
               </td>
             </tr>
+
+
             <tr class="boldtext">
-              <td>Web Developer</td>
-              <td class="center">Security Dealer Marketing – Covina, CA</td>
-              <td class="right">February 2013 — November 2013</td>
+              <td>
+                  <div class="row">
+                    <div class="col-md-4"><i class="fa fa-id-card"></i> Web Developer</div>
+                    <div class="col-md-4 center"><i class="fa fa-building"></i> Security Dealer Marketing – Covina, CA</div>
+                    <div class="col-md-4 right"><i class="fa fa-calendar"></i> Feb 2013 — Nov 2013</div>
+                  </div>
+              </td>
+              <td></td>
             </tr>
             <tr>
-              <td rowspand="3" colspan="3">
+              <td>
               <ul>
                 <li>Developed and wrote markup for websites using HTML, CSS and implementing responsive design using frameworks such as Skeleton and Bootstrap across browsers</li>
                 <li>Created wire frames with Adobe Photoshop and turn it into HTML from scratch</li>

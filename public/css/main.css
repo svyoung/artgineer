@@ -361,6 +361,20 @@ a:hover {
 	border-radius: 3px;
 }
 
+@media (max-width: 992px) {
+	.center {
+		text-align: left;
+	}
+
+	.left {
+		text-align: left;
+	}
+
+	.right {
+		text-align: left;
+	}
+}
+
 
 /***** POSTS STYLE ******/
 .col-md-3 {
