@@ -7,8 +7,8 @@
       </div>
       <div class="modal-body resume-body">
         <div style="float: right; font-size:20px"><i class="fa fa-file-word-o" style="color: #2a5598"></i>&nbsp;&nbsp;<i class="fa fa-file-pdf-o" style="color: #d90505"></i></div>
-        <h3 class="center resumename">Sam Vicki Young</h3>
-        <div class="greytext center">
+        <h3 class="strict-center resumename">Sam Vicki Young</h3>
+        <div class="greytext strict-center">
           <i class="fa fa-thumb-tack"></i> Rosemead, CA &nbsp;&nbsp;&nbsp;
           <i class="fa fa-phone"></i> 626-348-6446 
           <br/> <i class="fa fa-envelope"></i> <a href="mailto:truong.vee@gmail.com">truong.vee@gmail.com</a> &nbsp;&nbsp;&nbsp;

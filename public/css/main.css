@@ -326,6 +326,10 @@ a:hover {
 	color: #8b8a8a;
 }
 
+.strict-center {
+	text-align: center;
+}
+
 .center {
 	text-align: center;
 }
