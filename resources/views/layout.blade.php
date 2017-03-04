@@ -13,7 +13,8 @@
         <!-- Stylesheets -->
         <link rel="stylesheet" type="text/css" href="/css/main.css">
         <link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css">
-        <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+        <!-- <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"> -->
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.css" rel="stylesheet">
   
         <!-- Javascripts -->
@@ -21,62 +22,78 @@
         <script src="/js/bootstrap.min.js"></script>
         <script src="/js/summernote.min.js"></script>
         <script src="/js/main.js"></script>
-        <!-- @if (Auth::check()) -->
+        @if (Auth::check())
             <script src="/js/admin.js"></script>
-        <!-- @endif -->
+        @endif
         
         
     </head>
     <body>
+    <div id="header-div">
+        <div id="header-text">
+            <span class="text-sam">Sam</span><span class="text-young">Young</span>
+            <p>
+                <a href="https://www.linkedin.com/in/samisoam" target="_blank"><i class="fa fa-linkedin fa-fw"></i></a>
+                <a href="https://github.com/svyoung" target="_blank"><i class="fa fa-github fa-fw"></i></a>
+                <a href="mailto:truong.vee@gmail.com" target="_blank"><i class="fa fa-envelope"></i></a>
+            </p>
+            <p>
+                <a id="accesscontent"><i class="fa fa-angle-down arrowlarge"></i></a>
+        </div>
+    </div>
 
     <div class="navcontent">
         <a onclick="svyglobal.fn.showModal('/about','#aboutMe')">About</a>
         <a onclick="svyglobal.fn.showModal('/resume','#resume')">Resume</a>
-        Projects
+        <a onclick="">Projects</a>
     </div>
-    <div class="banner">
+<!--     <div class="banner">
         <div class="bannercontent">
             <img src="/images/profile.jpg" alt="Sam">
             <strong>Sam</strong> | Software Developer. Visual Artist. Sushi Connoisseur. Travel Buff. Puppy lover. 
-            <br/>
-            <a href="https://www.linkedin.com/in/samisoam" target="_blank"><i class="fa fa-linkedin fa-fw"></i></a>
-            <a href="https://github.com/svyoung" target="_blank"><i class="fa fa-github fa-fw"></i></a>
-            <a href="http://deviantart.com/svyportfolio" target="_blank"><i class="fa fa-deviantart"></i></a>
-            <a href="mailto:truong.vee@gmail.com" target="_blank"><i class="fa fa-envelope"></i></a>        </div>
+        </div>
+    </div> -->
+
+    <div class="search">
+        <input type="text" name="search" class="form-control searchpost" placeholder="search for posts...">
     </div>
 
     <div class="container">
             
 
-        <div class="search">
-            <input type="text" name="search" class="form-control searchpost" placeholder="search for posts...">
-        </div>
+        
 
         <!-- main content -->
-        <div class="main" id="mainblog">
+        <div class="main row" id="mainblog">
             @yield('content')
         </div>
 
     </div>
     
     <div class="footer">
+        @if (Route::has('login'))
+            <div class="authenticate">
+                @if (Auth::check())
+                <div class="login authenticated">
+                    Hi {{ Auth::user()->name }}! <a href="{{ url('/logout') }}">Logout</a>
+                </div>          
+                @else
+                <div class="login guest">
+                    <a href="{{ url('/login') }}">Login</a>
+                </div>
+                @endif
+            </div>
+        @endif
         Copyright &copy; {{ date('Y')}}. Sam Vicki Young
     </div>
-
-    @if (Route::has('login'))
-                <div class="top-right links">
-                    @if (Auth::check())
-                    <div class="login authenticated">
-                        Hi {{ Auth::user()->name }}!
-                        <br/><a href="{{ url('/logout') }}">Logout</a>
-                    </div>          
-                    @else
-                    <div class="login guest">
-                        <a href="{{ url('/login') }}">Login</a>
-                    </div>
-                    @endif
-                </div>
-            @endif
     
+    <script>
+        $('#accesscontent').click(function(){
+            $('html, body').animate({
+                scrollTop: $( $(".navcontent")).offset().top
+            }, 500);
+            return false;
+        });
+    </script>
     </body>
 </html>

@@ -59,11 +59,47 @@ table {
 }
 
 /****************************************************/
+html, body {
+	 height: 100%;
+}
+
+#header-div {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: url('/images/oceanbg.jpg') no-repeat center;
+    background-size: cover;
+    position: relative;
+}
+
+#header-text {
+	position: absolute;
+	float: left;
+	text-align: center;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.text-sam, .text-young {
+	text-transform: uppercase;
+	font-size: 3vw;
+	font-family: 'Abel', sans-serif;
+}
+.text-young {
+	font-weight: bold;
+}
+
+.arrowlarge {
+	font-size: 10vw !important;
+	color: #abb8c1;
+}
 
 body {
-	background: url('/images/pixel_weave.png') #f4f4f4 !important;
 	font-family: 'Arimo', sans-serif;
-	width: 100%;
+	/*background: #2f4550 !important;*/
+	background:  #fff;
 }
 
 .footer {
@@ -78,7 +114,23 @@ body {
 
 .navcontent {
 	padding: 10px;
+	display: block;
 	text-align: center;
+	color: #d1d2d3;
+	text-transform: uppercase; 
+	font-family: 'Abel', sans-serif;
+}
+
+.navcontent a {
+	padding: 10px;
+	display: inline-block;
+	color: #222 !important;
+	font-weight: bold;
+}
+
+.navcontent a:hover {
+	color: #ccc;
+	text-decoration: none;
 }
 
 .bannercontent {
@@ -162,36 +214,36 @@ span.definition {
 	display: inline-block;
 }
 
+.search {
+	padding: 0 35px;
+}
+
 .search input {
 	color: #000;
 	background: transparent;
 	border-bottom: 1px solid #ccc;
 	border-color: transparent;
 	outline: none;
-	width: 80%;
+	width: 100%;
 	margin: 0 auto;
 }
+
 
 .container {
 	padding:30px 25px 25px 25px;
 	overflow: hidden;
+	color: #cdd4da !important;
+	width: 100% !important;
 }
 
 .box {
-	background: #fff;
+	background: #e7e7e7;
 	display: block;
-	/*border: 1px solid #ddd;*/
-	box-sizing: border-box;
+/*	box-sizing: border-box;
 	box-shadow: 0 1px 1px rgba(0,0,0,0.15), 
 				-1px 0 0 rgba(0,0,0,0.03), 
 				1px 0 0 rgba(0,0,0,0.03), 
-				0 1px 0 rgba(0,0,0,0.12);
-}
-
-.unbox {
-	background: none;
-	display: block;
-	box-shadow: none;
+				0 1px 0 rgba(0,0,0,0.12);*/
 }
 
 .editline {
@@ -201,14 +253,16 @@ span.definition {
 .edit-pencil {
 	position: absolute;
 	top: 17px;
-	right: 17px;
+	right: 30px;
 	font-size: 20px !important;
-	color: #fff;
+	color: #000;
 }
 
 .main {
-	width: 80%;
-	margin: 0 auto;
+	padding: 0 20px;
+/*	display: table;
+    table-layout: fixed;
+    text-align: center;*/
 }
 
 p {
@@ -238,6 +292,11 @@ p {
 
 a {
 	cursor: pointer;
+	color: #1e2a31 !important;
+}
+
+a:hover {
+	color: #efefef !important;
 }
 
 .fa {
@@ -300,11 +359,20 @@ a {
 
 
 /***** POSTS STYLE ******/
+.col-md-3 {
+	background: none !important;
+}
+
 .post {
-	margin-bottom: 25px;
-	display: block;
+	/*margin: 0 10px 25px;*/
+	/*width: 430px;*/
+/*	display: table-cell;
+	float: left;*/
+	/*display: inline-block;*/
+	height: 300px;
+	overflow: hidden;
 	position: relative;
-/*	padding: 25px;*/
+	margin-bottom: 20px;
 }
 
 .post-hover {
@@ -313,15 +381,21 @@ a {
 
 .entry {
 	line-height: 20px;
-	margin-top: 15px;
-	color: #4b4a4a;
+	text-align: left;
+	color: #444545;
+	background: #e7e7e7;
+/*	-webkit-box-shadow: 0 8px 6px -6px black;
+     -moz-box-shadow: 0 8px 6px -6px black;
+          box-shadow: 0 8px 6px -6px black;*/
+	/*box-shadow: 0 1px 1px rgba(0,0,0,0.15), -1px 0 0 rgba(0,0,0,0.03), 1px 0 0 rgba(0,0,0,0.03), 0 1px 0 rgba(0,0,0,0.12);*/
 }
 
 .entry_text {
-	padding: 25px;
+	padding: 15px;
 }
 
 .blog_input_content {
+	font-size: 1em;
 	width: 100%;
 }
 
@@ -354,22 +428,23 @@ a {
 
 .post_title {
 	font-family: 'Abel', sans-serif;
-	font-size: 25px;
-	line-height: 25px;
+	font-size: 18px;
+	line-height: 18px;
 	font-weight: 700;
 	display: block;
-	padding: 15px 25px 15px 25px;
-    background: #3f3f3f;
+	padding: 15px;
+    background: #333333;
     color: #fff;
 }
 
 .post_date {
 	text-transform: uppercase;
-	font-size: 13px;
-	color: #838282;
-	margin-top: 10px;
+	font-size: 11px;
+	color: #000;
+	font-weight: bold;
+	/*margin-top: 10px;*/
 	display: block;
-	padding: 0 25px 0 25px;
+	padding: 0 25px 0 15px;
 }
 
 .more_text {
@@ -407,6 +482,7 @@ a {
     text-decoration: underline;
     text-transform: uppercase;
     font-size: 10px;
+    cursor: pointer;
 }
 
 /*******************
@@ -417,13 +493,12 @@ ADD NEW POST STYLES
 	position: fixed;
 	right: 20px;
 	top: 20px;
-	background: #;
-	font-size:40px;
+	font-size:20px;
 	font-weight: 500;
 	background-color: #222222;
 	color: #eee;
 	padding: 0 15px;
-	border-radius: 7px;
+	/*border-radius: 7px;*/
 }
 
 .add_new_post:hover {
@@ -436,8 +511,14 @@ MODAL OVERRIDES
 *******************/
 
 .svy-modal-header {
+	/*background: url('/images/oceanbg.jpg') no-repeat center;*/
 	background: #222222;
 	color: #fff;
+}
+
+.modal-content {
+	border-radius: 0px !important;
+	background: #e7e7e7 !important;
 }
 
 .close {
@@ -499,9 +580,16 @@ NOTIFY BOX STYLES
 }
 
 /*******************
-MODAL OVERRIDES
+AUTHENTICATION
 *******************/
 
-.login.guest a, .login.guest a:active, .login.guest a:hover {
+.authenticate {
+	left: 0;
+	bottom: 0;
+	z-index: 10000;
+	color: #fff;
+}
+
+.login.authenticated a, .login.guest a, .login.guest a:active, .login.guest a:hover {
 	color: #f4f4f4 !important;
 }

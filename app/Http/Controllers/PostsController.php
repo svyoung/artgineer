@@ -8,6 +8,19 @@ use DB;
 
 class PostsController extends Controller
 {
+    public function fullpost($id) {
+        $entry = DB::table('posts')
+            ->where([
+                ['id', '=', $id], 
+                ['status', '=', 'active']
+            ])
+            ->get();
+        $entry = $entry->toArray();
+        $entry[0]->created_at = date('F d, Y', strtotime($entry[0]->created_at));
+        return view('modals.post', ['post' => $entry]);
+            // return response()->json($entry);
+    }
+
     // add new post data to db
     public function add(Request $request) {
     	$data = $request->all();
@@ -88,7 +101,7 @@ class PostsController extends Controller
     	$posts = [];
     	foreach($entries as $key => $entry) {
     		$posts[$key] = $entry;
-    		$posts[$key]['created_at'] = date('F, d Y', strtotime($entry['created_at']));
+    		$posts[$key]['created_at'] = date('F d, Y', strtotime($entry['created_at']));
     	}
 
     	return response()->json($posts);

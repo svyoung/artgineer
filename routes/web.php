@@ -22,6 +22,7 @@ Route::get('/home', 'HomeController@index');
 Route::get('/get_posts', 'HomeController@getPosts');
 
 Auth::routes();
+
 // opening up new post modal
 Route::get('/new', 'HomeController@newPost');
 
@@ -33,6 +34,9 @@ Route::post('/updatepost', 'PostsController@update');
 
 // delete existing post
 Route::post('/deletepost', 'PostsController@delete');
+
+// read full post
+Route::get('/post/{id}', 'PostsController@fullpost');
 
 // search posts
 Route::get('/searchposts', 'PostsController@search');

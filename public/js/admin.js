@@ -34,13 +34,14 @@ var svy = (function() {
 					updatePost: function(postID) {
 						var data = {
 							id: postID,
-							title: $('[data-post-id='+postID+']').find('.blog_input').val(),
-							content: $('.post_content-'+postID).summernote('code')
+							title: $('.blog_input').val(),
+							content: $('.modal-post-content').summernote('code')
 						};
 
 						$.post('/updatepost', data, function(result){
 							if(result != false) {
 								var map = {id: postID, title: result[0].title, content: result[0].content};
+								svyglobal.post.getPosts();
 								svy.post.undoEdit(map);
 								svy.notify.success("Submission Success", "Succesfully updated post!");					
 							} else {
@@ -58,6 +59,7 @@ var svy = (function() {
 						// do database delete here
 						$.post('/deletepost', {'id': postID}, function(result) {
 							if(result!=false) {
+								$("#fullpost").modal('hide');
 								$('[data-post-id='+postID+']').slideUp(1000, function(){
 									$(this).remove();
 								})
@@ -73,25 +75,25 @@ var svy = (function() {
 					}, // end delete post
 
 
-					postEdit: function(mainPost, postID) {
+					postEdit: function(postID) {
 						var mainPost = mainPost,
 							postID = postID,
-							postTitle = mainPost.find('.post_title').text().trim(),
+							postTitle = $('.modal-title').text().trim(),
 							postTitleInput = $("<input />"),
-							postForSN = $(".post_content-"+postID),
-							readMore = $('[data-more-id='+postID+']'),
+							postForSN = $(".modal-post-content"),
+							// readMore = $('[data-more-id='+postID+']'),
 							inputDiv = $('<div class="post_buttons"/>'),
 							submitButton = $('<span />'),
 							cancelButton = $('<span />'),
 							deleteText = $('<span />');
-						mainPost.closest('.edit_pencil').remove();
+						$('.edit_pencil').remove();
 
 						postForSN.summernote({
 							height: 300,
 							minHeight: 200
 						});
 
-						if(!mainPost.find('.blog_input').exists() && !mainPost.find('.post_buttons').exists()) {
+						if(!$('.blog_input').exists() && !$('.post_buttons').exists()) {
 							postTitleInput.val(postTitle).addClass("blog_input").attr('name', 'title');
 							submitButton.text("Submit").addClass('post_submit btn btn-primary');
 							cancelButton.text("Cancel").addClass('post_cancel btn btn-default');
@@ -99,10 +101,7 @@ var svy = (function() {
 
 							inputDiv.append(submitButton).append(cancelButton).append(deleteText);
 							postForSN.parent().append(inputDiv);
-							mainPost.find(".post_title_placement").html(postTitleInput);
-							if(readMore.length > 0 ) {
-								readMore.hide();
-							}
+							$(".modal-title").html(postTitleInput);
 						}
 
 						submitButton.click(function(){
@@ -122,21 +121,22 @@ var svy = (function() {
 
 					undoEdit: function(postData){
 						var mainPost = $('[data-post-id='+postData.id+']'),
-							blogContent = $('.post_content-'+postData.id);
+							blogContent = $('.modal-post-content');
 
-						mainPost.removeClass('editmode').find(".post_title").html(postData.title);			
+						$(".modal-title").html(postData.title);			
 						blogContent.summernote('destroy');
 						blogContent.html(postData.content);							
 						blogContent.siblings(".post_buttons").remove();
-						$('[data-more-id='+postData.id+']').show();
-						$(mainPost).hide().fadeIn(1000);	
+						$('.modal-body').hide().fadeIn(1000);	
+						// TODO
+						// hide modal
 					},
 
 					grabPostContent(postID) {
 						var data = {
 							id: postID,
-							title: ($('[data-post-id='+postID+']').find('blog_title').html() || $('[data-post-id='+postID+']').find('.blog_input').val()),
-							content: $(".post_content-"+postID).html()
+							title: $('.blog_input').val(),
+							content: $('.modal-post-content').html()
 						};
 						return data;
 					},
@@ -221,28 +221,28 @@ var svy = (function() {
 					addNewPostButton.text("+");
 					addNewPostButton.addClass("add_new_post");
 					addNewPostButton.attr("onclick", 'svyglobal.fn.showModal("/new", "#newPost")');
-					$('.banner').before(addNewPostButton);
+					$('body').append(addNewPostButton);
 					// end adding new post button
 
 					// hover over post for editing activation
-					$('.main').on('mouseenter', '.post', function( event ) {
-				    	if(!$(this).hasClass('editmode')) {
-							$(this).css({
-								'background' : '#e1e1e1', 
-								'cursor' : 'pointer'
-							});
-							$(this).append('<i class="fa fa-pencil edit-pencil"></i>');
-						}
-					}).on('mouseleave', '.post', function( event ) {
-					    $(this).css({
-					    	'background' : '#fff'
-					    }).find(".edit-pencil").remove();
-					}).on("click", '.post', function() {
-						var postID = $(this).data("post-id");
-						$(this).addClass("editmode");
-						$(this).find(".edit-pencil").remove();
-						svy.post.postEdit($(this), postID);
-					});	// end hover over post for editing activation
+					// $('.main').on('mouseenter', '.post', function( event ) {
+				 //    	if(!$(this).hasClass('editmode')) {
+					// 		$(this).css({
+					// 			'background' : '#b2b2b2', 
+					// 			'cursor' : 'pointer'
+					// 		});
+					// 		$(this).append('<i class="fa fa-pencil edit-pencil"></i>');
+					// 	}
+					// }).on('mouseleave', '.post', function( event ) {
+					//     $(this).css({
+					//     	'background' : '#e7e7e7'
+					//     }).find(".edit-pencil").remove();
+					// }).on("click", '.post', function() {
+					// 	var postID = $(this).data("post-id");
+					// 	$(this).addClass("editmode");
+					// 	$(this).find(".edit-pencil").remove();
+					// 	svy.post.postEdit($(this), postID);
+					// });	// end hover over post for editing activation
 
 				});						
 
