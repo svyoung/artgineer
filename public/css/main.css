@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Arimo:400,400i,700,700i');
 @import url('https://fonts.googleapis.com/css?family=Noto+Serif:400,400i,700,700i');
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -16,8 +16,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -28,7 +28,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -64,7 +64,7 @@ html, body {
 }
 
 #header-div {
-    height: 100%;
+    height: 100vh;
     width: 100%;
     top: 0;
     left: 0;
@@ -121,7 +121,7 @@ body {
 	display: block;
 	text-align: center;
 	color: #d1d2d3;
-	text-transform: uppercase; 
+	text-transform: uppercase;
 	font-family: 'Abel', sans-serif;
 }
 
@@ -161,9 +161,9 @@ body {
 	text-align: center;
 	margin: 0;
 	padding: 0;
-	text-shadow: 0 1px 1px rgba(0,0,0,0.15), 
-				-1px 0 0 rgba(0,0,0,0.03), 
-				1px 0 0 rgba(0,0,0,0.03), 
+	text-shadow: 0 1px 1px rgba(0,0,0,0.15),
+				-1px 0 0 rgba(0,0,0,0.03),
+				1px 0 0 rgba(0,0,0,0.03),
 				0 1px 0 rgba(0,0,0,0.12);
 }
 
@@ -173,18 +173,18 @@ body {
 	display: inline-block;
 	margin: 0 auto;
 	padding: 10px;
-	box-shadow: 0 1px 1px rgba(0,0,0,0.15), 
-				-1px 0 0 rgba(0,0,0,0.03), 
-				1px 0 0 rgba(0,0,0,0.03), 
+	box-shadow: 0 1px 1px rgba(0,0,0,0.15),
+				-1px 0 0 rgba(0,0,0,0.03),
+				1px 0 0 rgba(0,0,0,0.03),
 				0 1px 0 rgba(0,0,0,0.12);
 }
 
 .title .icons_title {
 	font-size: 20px;
 	margin: 15px auto;
-	text-shadow: 0 1px 1px rgba(0,0,0,0.15), 
-				-1px 0 0 rgba(0,0,0,0.03), 
-				1px 0 0 rgba(0,0,0,0.03), 
+	text-shadow: 0 1px 1px rgba(0,0,0,0.15),
+				-1px 0 0 rgba(0,0,0,0.03),
+				1px 0 0 rgba(0,0,0,0.03),
 				0 1px 0 rgba(0,0,0,0.12);
 }
 
@@ -244,9 +244,9 @@ span.definition {
 	background: #e7e7e7;
 	display: block;
 /*	box-sizing: border-box;
-	box-shadow: 0 1px 1px rgba(0,0,0,0.15), 
-				-1px 0 0 rgba(0,0,0,0.03), 
-				1px 0 0 rgba(0,0,0,0.03), 
+	box-shadow: 0 1px 1px rgba(0,0,0,0.15),
+				-1px 0 0 rgba(0,0,0,0.03),
+				1px 0 0 rgba(0,0,0,0.03),
 				0 1px 0 rgba(0,0,0,0.12);*/
 }
 
@@ -541,7 +541,6 @@ MODAL OVERRIDES
 
 .modal-content {
 	border-radius: 0px !important;
-	background: #e7e7e7 !important;
 }
 
 .close {

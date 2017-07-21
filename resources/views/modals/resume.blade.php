@@ -10,7 +10,7 @@
         <h3 class="strict-center resumename">Sam Vicki Young</h3>
         <div class="greytext strict-center">
           <i class="fa fa-thumb-tack"></i> Rosemead, CA &nbsp;&nbsp;&nbsp;
-          <i class="fa fa-phone"></i> 626-348-6446 
+          <i class="fa fa-phone"></i> 626-348-6446
           <br/> <i class="fa fa-envelope"></i> <a href="mailto:truong.vee@gmail.com">truong.vee@gmail.com</a> &nbsp;&nbsp;&nbsp;
           <i class="fa fa-globe"></i> <a href="http://samvyoung.com" target="_blank">samvyoung.com</a> &nbsp;&nbsp;&nbsp;
           <i class="fa fa-github"></i> <a href="http://github.com/svyoung" target="_blank">github.com/svyoung</a>
@@ -31,6 +31,7 @@
                 <li>CSS/SASS/LESS</li>
                 <li>JavaScript/jQuery</li>
                 <li>AJAX</li>
+                <li>API</li>
                 <li>MongoDB</li>
                 <li>Apache</li>
                 <li>Database</li>
@@ -38,7 +39,7 @@
                 <li>Linux</li>
                 <li>Agile Methodologies</li>
                 <li>NodeJS</li>
-                <li>AngularJS</li>
+                <li>ReactJS</li>
               </ul>
             </td>
           </tr>
@@ -83,6 +84,24 @@
 
         <div class="employer-box pad-15">
           <table class="table">
+            <tr class="boldtext">
+              <td>
+                  <div class="row">
+                    <div class="col-md-4"><i class="fa fa-id-card"></i> Freelance/Consultant</div>
+                    <div class="col-md-4 center"><i class="fa fa-building"></i> California</div>
+                    <div class="col-md-4 right"><i class="fa fa-calendar"></i> Nov 2016 – Present</div>
+                  </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+              <ul>
+                <li>Worked on personal projects during my pregnancy break with Laravel, NodeJS, and ReactJS. Code source can be found on http://github.com/svyoung</li>
+                <li>Projects included a custom built CMS blog using jQuery; a personal Twitter-like web app with NodeJS, ExpressJS, ReactJS, and Socket.io; a random name generator using API from http://behindthename.com, and a simple Human Resource CRM with Node and React</li>
+              </ul>
+              </td>
+            </tr>
+
             <tr class="boldtext">
               <td>
                   <div class="row">
@@ -194,13 +213,13 @@
             </tr>
           </table>
           </div>
-          
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
       <script>
-      	
+
       </script>
     </div>
   </div>
