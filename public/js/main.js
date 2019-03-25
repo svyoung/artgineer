@@ -77,28 +77,85 @@ var svyglobal = (function(){
 						});
 						
 					},
+                    showMobileMenu: function(e) {
+                        console.log('open mobile menu!');
+                        if ($(window).width() < 768) {
+                            console.log('under 768');
+                            $(e)
+                                .siblings('.navcontent')
+                                .toggle(200);
+                            $('.container, #header-text').toggleClass('blurIt');
+                        }
+                    },
+					getCompany: function(comp) {
+						$('.company-menu ul li').removeClass('active');
+						$('.company-details').hide();
+						$('[data-comp-menu="'+comp+'"]').addClass('active');
+						$('[data-company="'+comp+'"]').hide().fadeIn(500);
+					}
 				})
 			})(),
 
 			'init': function(){
 				$(document).ready(function(){
 
+					$.get('/resume', function(result) {
+						// console.log(result);
+						$('#resume, #projects').html(result);
+						$('.company-menu ul li:first-child').addClass('active');
+						$('.company-details:first-child').hide().fadeIn(500);
+					});
+
+                    var c, currentScrollTop = 0,
+                        header = $('header');
+				    // switch between desktop and mobile menus on window resize
+                    $(window).resize(function() {
+                        if ($(window).width() >= 768 && !$('.navcontent').is(':visible')) {
+                            $('.navcontent').show();
+                        } else if ($(window).width() < 768 && $('.navcontent').is(':visible')) {
+                            $('.navcontent').hide();
+                            $('.container, #header-text').removeClass('blurIt');
+                        }
+                    }).resize();
+
+                    $(window).scroll(function(){
+                        var a = $(window).scrollTop();
+                        var b = header.height();
+
+                        currentScrollTop = a;
+
+                        if (c < currentScrollTop && a > b + b) {
+                            header.addClass("scrollUp");
+                        } else if (c > currentScrollTop && !(a <= b)) {
+                            header.removeClass("scrollUp");
+                        }
+                        c = currentScrollTop;
+
+                        var sections = $('section');
+						sections.each(function(i, obj) {
+							var el = $(obj),
+								elPos = $(obj).offset().top,
+								elHeight = $(obj).height();
+							if(a >= elPos - 400 && a < elPos + elHeight) {
+								el.addClass('active');
+							} else if (a > elPos + elHeight || a < elPos){
+								el.removeClass('active');
+							}
+
+
+							console.log( 'scroll element: ' + $(obj).attr('id')  + ' elPos ' + elPos + ' scroll: ' + a);
+						});
+                        // console.log('section ' + sections + ' scroll position: ' + a);
+                    });
+
+                    setTimeout(function() {
+                        $('#introduction-load').remove();
+                    }, 3000);
+
+                    // $('.intro-young').delay(500).addClass('fadeIn');
+
 					// get post to display on document ready
-					svyglobal.post.getPosts();
-
-					// $('body').on('click', '.more_text', function(){
-					// 	var moreID = $(this).data('more-id'),
-					// 		origDiv = $(this).siblings('.post').find('.post_content-'+moreID),
-					// 		readMoreText = 'Continue Reading';
-
-					// 	if($(this).hasClass("read_less")) {
-					// 		$(this).text(readMoreText).removeClass("read_less");
-					// 		$(origDiv).removeClass("blog_post_full").addClass("blog_post_truncated");
-					// 	} else {
-					// 		$(origDiv).removeClass("blog_post_truncated").addClass("blog_post_full");
-					// 		$(this).addClass("read_less").text("Less");
-					// 	}
-					// }); // read more click
+					// svyglobal.post.getPosts();
 
 					var timeout;
 					$('.searchpost').on("change keyup", function(){
@@ -127,10 +184,15 @@ var svyglobal = (function(){
 					});	// end hover over post for full blog on modal display
 
 
-
-
-
-				}); // document ready					
+				})
+                    .on("click", function(e) {
+                        var $mobile_menu = $('.navcontent'), $target = $(e.target);
+                        if($(window).width() < 768 && $mobile_menu.is(":visible") && !$target.closest('.navcontent').length && $target.attr('class') !== 'hamburger-menu') {
+                            // hide the search results
+                            $mobile_menu.hide();
+                            $('.container, #header-text').removeClass('blurIt');
+                        }
+                    }); // document ready
 
 			}, // end 'init' function
 
@@ -138,3 +200,4 @@ var svyglobal = (function(){
 })();
 
 svyglobal.init();
+

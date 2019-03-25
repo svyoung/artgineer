@@ -15,6 +15,7 @@ Route::get('/', function () {
     return view('main.index');
 });
 
+Route::get('/resume', 'ResumeController@index');
 
 
 Route::get('/home', 'HomeController@index');
@@ -43,6 +44,6 @@ Route::get('/searchposts', 'PostsController@search');
 
 Route::get('/about', 'HomeController@about');
 
-Route::get('/resume', 'HomeController@resume');
+//Route::get('/resume', 'HomeController@resume');
 
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
